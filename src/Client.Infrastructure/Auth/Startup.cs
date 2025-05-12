@@ -18,8 +18,11 @@ internal static class Startup
                 .AddMsalAuthentication(options =>
                     {
                         config.Bind(nameof(AuthProvider.AzureAd), options.ProviderOptions.Authentication);
-                        options.ProviderOptions.DefaultAccessTokenScopes.Add(
-                            config[$"{nameof(AuthProvider.AzureAd)}:{ConfigNames.ApiScope}"]);
+                        string? apiScope = config[$"{nameof(AuthProvider.AzureAd)}:{ConfigNames.ApiScope}"];
+                        if (!string.IsNullOrEmpty(apiScope))
+                        {
+                            options.ProviderOptions.DefaultAccessTokenScopes.Add(apiScope);
+                        }
                         options.ProviderOptions.LoginMode = "redirect";
                     })
                     .AddAccountClaimsPrincipalFactory<AzureAdClaimsPrincipalFactory>()
