@@ -23,6 +23,7 @@ internal static class Startup
                         {
                             options.ProviderOptions.DefaultAccessTokenScopes.Add(apiScope);
                         }
+
                         options.ProviderOptions.LoginMode = "redirect";
                     })
                     .AddAccountClaimsPrincipalFactory<AzureAdClaimsPrincipalFactory>()

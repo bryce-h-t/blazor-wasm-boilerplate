@@ -11,7 +11,6 @@ public class AzureAdAuthorizationMessageHandler : AuthorizationMessageHandler
     {
         string? apiBaseUrl = config[ConfigNames.ApiBaseUrl];
         string? apiScope = config[$"{nameof(AuthProvider.AzureAd)}:{ConfigNames.ApiScope}"];
-        
         if (!string.IsNullOrEmpty(apiBaseUrl) && !string.IsNullOrEmpty(apiScope))
         {
             ConfigureHandler(
