@@ -18,7 +18,7 @@
   },
   "identity": "FullStackHero.BlazorWebAssembly.Boilerplate",
   "name": "Blazor WebAssembly Boilerplate - FullStackHero",
-  "description": "Clean Architecture Boilerplate Template for .NET 6.0 Blazor WebAssembly built for FSH WebAPI with the goodness of MudBlazor Components.",
+  "description": "Clean Architecture Boilerplate Template for .NET 8.0 Blazor WebAssembly built for FSH WebAPI with the goodness of MudBlazor Components.",
   "shortName": "fsh-blazor",
   "sourceName": "FSH.BlazorWebAssembly",
   "preferNameDirectory": true,
