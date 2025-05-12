@@ -6,7 +6,7 @@ public class DarkTheme : MudTheme
 {
     public DarkTheme()
     {
-        Palette = new PaletteDark()
+        PaletteDark = new PaletteDark()
         {
             Primary = CustomColors.Dark.Primary,
             Secondary = CustomColors.Dark.Secondary,
