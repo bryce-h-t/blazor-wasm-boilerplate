@@ -90,7 +90,7 @@ public class JwtAuthenticationService : AuthenticationStateProvider, IAuthentica
         var authState = await GetAuthenticationStateAsync();
         if (authState.User.Identity?.IsAuthenticated is not true)
         {
-            return new AccessTokenResult(AccessTokenResultStatus.RequiresRedirect, null, "/login", new InteractiveRequestOptions { Interaction = InteractionType.Redirect, ReturnUrl = "/login" });
+            return new AccessTokenResult(AccessTokenResultStatus.RequiresRedirect, null, "/login", new InteractiveRequestOptions { Interaction = InteractionType.SignIn, ReturnUrl = "/login" });
         }
 
         // We make sure the access token is only refreshed by one thread at a time. The other ones have to wait.
@@ -108,13 +108,13 @@ public class JwtAuthenticationService : AuthenticationStateProvider, IAuthentica
                 (bool succeeded, var response) = await TryRefreshTokenAsync(new RefreshTokenRequest { Token = token, RefreshToken = refreshToken });
                 if (!succeeded)
                 {
-                    return new AccessTokenResult(AccessTokenResultStatus.RequiresRedirect, null, "/login", new InteractiveRequestOptions { Interaction = InteractionType.Redirect, ReturnUrl = "/login" });
+                    return new AccessTokenResult(AccessTokenResultStatus.RequiresRedirect, null, "/login", new InteractiveRequestOptions { Interaction = InteractionType.SignIn, ReturnUrl = "/login" });
                 }
 
                 token = response?.Token;
             }
 
-            return new AccessTokenResult(AccessTokenResultStatus.Success, new AccessToken() { Value = token }, string.Empty, new InteractiveRequestOptions { Interaction = InteractionType.None, ReturnUrl = string.Empty });
+            return new AccessTokenResult(AccessTokenResultStatus.Success, new AccessToken() { Value = token }, string.Empty, new InteractiveRequestOptions { Interaction = InteractionType.GetToken, ReturnUrl = string.Empty });
         }
         finally
         {
