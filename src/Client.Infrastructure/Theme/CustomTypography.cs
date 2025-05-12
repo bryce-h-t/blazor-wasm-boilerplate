@@ -6,7 +6,7 @@ public static class CustomTypography
 {
     public static Typography FSHTypography => new Typography()
     {
-        Default = new Default()
+        Default = new TypographyDefault()
         {
             FontFamily = new[] { "Montserrat", "Helvetica", "Arial", "sans-serif" },
             FontSize = ".875rem",
@@ -14,7 +14,7 @@ public static class CustomTypography
             LineHeight = 1.43,
             LetterSpacing = ".01071em"
         },
-        H1 = new H1()
+        H1 = new TypographyH1()
         {
             FontFamily = new[] { "Montserrat", "Helvetica", "Arial", "sans-serif" },
             FontSize = "6rem",
@@ -22,7 +22,7 @@ public static class CustomTypography
             LineHeight = 1.167,
             LetterSpacing = "-.01562em"
         },
-        H2 = new H2()
+        H2 = new TypographyH2()
         {
             FontFamily = new[] { "Montserrat", "Helvetica", "Arial", "sans-serif" },
             FontSize = "3.75rem",
@@ -30,7 +30,7 @@ public static class CustomTypography
             LineHeight = 1.2,
             LetterSpacing = "-.00833em"
         },
-        H3 = new H3()
+        H3 = new TypographyH3()
         {
             FontFamily = new[] { "Montserrat", "Helvetica", "Arial", "sans-serif" },
             FontSize = "3rem",
@@ -38,7 +38,7 @@ public static class CustomTypography
             LineHeight = 1.167,
             LetterSpacing = "0"
         },
-        H4 = new H4()
+        H4 = new TypographyH4()
         {
             FontFamily = new[] { "Montserrat", "Helvetica", "Arial", "sans-serif" },
             FontSize = "2.125rem",
@@ -46,7 +46,7 @@ public static class CustomTypography
             LineHeight = 1.235,
             LetterSpacing = ".00735em"
         },
-        H5 = new H5()
+        H5 = new TypographyH5()
         {
             FontFamily = new[] { "Montserrat", "Helvetica", "Arial", "sans-serif" },
             FontSize = "1.5rem",
@@ -54,7 +54,7 @@ public static class CustomTypography
             LineHeight = 1.334,
             LetterSpacing = "0"
         },
-        H6 = new H6()
+        H6 = new TypographyH6()
         {
             FontFamily = new[] { "Montserrat", "Helvetica", "Arial", "sans-serif" },
             FontSize = "1.25rem",
@@ -62,7 +62,7 @@ public static class CustomTypography
             LineHeight = 1.6,
             LetterSpacing = ".0075em"
         },
-        Button = new Button()
+        Button = new TypographyButton()
         {
             FontFamily = new[] { "Montserrat", "Helvetica", "Arial", "sans-serif" },
             FontSize = ".875rem",
@@ -70,7 +70,7 @@ public static class CustomTypography
             LineHeight = 1.75,
             LetterSpacing = ".02857em"
         },
-        Body1 = new Body1()
+        Body1 = new TypographyBody1()
         {
             FontFamily = new[] { "Montserrat", "Helvetica", "Arial", "sans-serif" },
             FontSize = "1rem",
@@ -78,7 +78,7 @@ public static class CustomTypography
             LineHeight = 1.5,
             LetterSpacing = ".00938em"
         },
-        Body2 = new Body2()
+        Body2 = new TypographyBody2()
         {
             FontFamily = new[] { "Montserrat", "Helvetica", "Arial", "sans-serif" },
             FontSize = ".875rem",
@@ -86,7 +86,7 @@ public static class CustomTypography
             LineHeight = 1.43,
             LetterSpacing = ".01071em"
         },
-        Caption = new Caption()
+        Caption = new TypographyCaption()
         {
             FontFamily = new[] { "Montserrat", "Helvetica", "Arial", "sans-serif" },
             FontSize = ".75rem",
@@ -94,7 +94,7 @@ public static class CustomTypography
             LineHeight = 1.66,
             LetterSpacing = ".03333em"
         },
-        Subtitle1 = new Subtitle1()
+        Subtitle1 = new TypographySubtitle1()
         {
             FontFamily = new[] { "Montserrat", "Helvetica", "Arial", "sans-serif" },
             FontSize = "1rem",
@@ -102,7 +102,7 @@ public static class CustomTypography
             LineHeight = 1.57,
             LetterSpacing = ".00714em"
         },
-        Subtitle2 = new Subtitle2()
+        Subtitle2 = new TypographySubtitle2()
         {
             FontFamily = new[] { "Montserrat", "Helvetica", "Arial", "sans-serif" },
             FontSize = ".875rem",
