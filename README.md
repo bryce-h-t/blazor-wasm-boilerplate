@@ -7,19 +7,19 @@
 </p>
 
 # Blazor WebAssembly Boilerplate 
-Built with .NET 6.0 and the goodness of MudBlazor Component Library. Incorporates the most essential Packages your projects will ever need. Follows Clean Architecture Principles.
+Built with .NET 8.0 and the goodness of MudBlazor Component Library. Incorporates the most essential Packages your projects will ever need. Follows Clean Architecture Principles.
 
 ## Goals
 
 The goal of this repository is to help developers / companies kickstart their Web Application Development with a pre-built Blazor WebAssembly Boilerplate that includes several much needed components and features.
 
 > Note that this is a frontend / client application only! The backend for this application is available in a seperate repository. 
-> - Find fullstackhero's .NET 6 Web API Boilerplate here - https://github.com/fullstackhero/dotnet-webapi-boilerplate
+> - Find fullstackhero's .NET Web API Boilerplate here - https://github.com/fullstackhero/dotnet-webapi-boilerplate
 
 ## Prerequisites
 
 - Make sure you have the API Running. Here is FSH Backend - https://github.com/fullstackhero/dotnet-webapi-boilerplate
-- Once fullstackhero's .NET 6 Web API is up and running, run the Blazor WebAssembly Project to consume it's services.
+- Once fullstackhero's .NET Web API is up and running, run the Blazor WebAssembly Project to consume it's services.
 
 ## Getting Started
 
@@ -39,15 +39,42 @@ This would install the `fullstackhero Blazor WebAssembly Boilerplate` template g
 >
 > *FullStackHero.BlazorWebAssembly.Boilerplate is now in pre-release state. You can find the latest version on NuGet.org*
 
-**FullStackHero.BlazorWebAssembly.Boilerplate::0.0.1-rc is compatible only with FullStackHero.WebAPI.Boilerplate::0.0.6-rc and above.**
+**This .NET 8.0 version of the Blazor WebAssembly Boilerplate requires a compatible .NET 8.0 backend.**
 
 Get the .NET WebApi Boilerplate by running the following command
 
 ```
-dotnet new --install FullStackHero.WebAPI.Boilerplate::0.0.6-rc
+dotnet new --install FullStackHero.WebAPI.Boilerplate
 ```
 
 For more details on getting started, [read this article](https://fullstackhero.net/blazor-webassembly-boilerplate/general/getting-started/)
+
+## .NET 8.0 Upgrade Notes
+
+This project has been upgraded from .NET 6.0 to .NET 8.0. The upgrade includes:
+
+- Updated target framework from `net6.0` to `net8.0` in all project files
+- Updated NuGet package references to .NET 8.0 compatible versions:
+  - Microsoft.AspNetCore.Components.WebAssembly: 6.0.5 → 8.0.15
+  - Microsoft.AspNetCore.Components.WebAssembly.DevServer: 6.0.5 → 8.0.15
+  - Microsoft.AspNetCore.Components.Authorization: 6.0.5 → 8.0.15
+  - Microsoft.AspNetCore.SignalR.Client: 6.0.5 → 8.0.15
+  - Microsoft.Authentication.WebAssembly.Msal: 6.0.5 → 8.0.15
+  - Microsoft.Extensions.Caching.Memory: 6.0.1 → 8.0.1
+  - Microsoft.Extensions.Http: 6.0.0 → 8.0.1
+  - Microsoft.Extensions.Localization: 6.0.5 → 8.0.15
+  - Microsoft.AspNetCore.Components.WebAssembly.Server: 6.0.5 → 8.0.15
+  - Newtonsoft.Json: 13.0.1 → 13.0.3
+- Updated NSwag configuration to use .NET 8.0
+- Fixed API compatibility issues with .NET 8.0
+- Added global.json with .NET 8.0 SDK configuration
+
+To upgrade your own project, you can use the .NET Upgrade Assistant:
+```
+dotnet tool install -g upgrade-assistant
+upgrade-assistant analyze YourSolution.sln --targetFramework net8.0
+upgrade-assistant upgrade YourSolution.sln
+```
 
 ## Community
 
