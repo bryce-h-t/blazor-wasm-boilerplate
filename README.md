@@ -49,33 +49,6 @@ dotnet new --install FullStackHero.WebAPI.Boilerplate
 
 For more details on getting started, [read this article](https://fullstackhero.net/blazor-webassembly-boilerplate/general/getting-started/)
 
-## .NET 8.0 Upgrade Notes
-
-This project has been upgraded from .NET 6.0 to .NET 8.0. The upgrade includes:
-
-- Updated target framework from `net6.0` to `net8.0` in all project files
-- Updated NuGet package references to .NET 8.0 compatible versions:
-  - Microsoft.AspNetCore.Components.WebAssembly: 6.0.5 → 8.0.15
-  - Microsoft.AspNetCore.Components.WebAssembly.DevServer: 6.0.5 → 8.0.15
-  - Microsoft.AspNetCore.Components.Authorization: 6.0.5 → 8.0.15
-  - Microsoft.AspNetCore.SignalR.Client: 6.0.5 → 8.0.15
-  - Microsoft.Authentication.WebAssembly.Msal: 6.0.5 → 8.0.15
-  - Microsoft.Extensions.Caching.Memory: 6.0.1 → 8.0.1
-  - Microsoft.Extensions.Http: 6.0.0 → 8.0.1
-  - Microsoft.Extensions.Localization: 6.0.5 → 8.0.15
-  - Microsoft.AspNetCore.Components.WebAssembly.Server: 6.0.5 → 8.0.15
-  - Newtonsoft.Json: 13.0.1 → 13.0.3
-- Updated NSwag configuration to use .NET 8.0
-- Fixed API compatibility issues with .NET 8.0
-- Added global.json with .NET 8.0 SDK configuration
-
-To upgrade your own project, you can use the .NET Upgrade Assistant:
-```
-dotnet tool install -g upgrade-assistant
-upgrade-assistant analyze YourSolution.sln --targetFramework net8.0
-upgrade-assistant upgrade YourSolution.sln
-```
-
 ## Community
 
 - Discord [@fullstackhero](https://discord.gg/gdgHRt4mMw)
