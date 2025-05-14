@@ -63,11 +63,20 @@
     {
         var query = Navigation.ToAbsoluteUri(Navigation.Uri).Query;
 
-        if (!string.IsNullOrWhiteSpace(query)
-            && QueryHelpers.ParseQuery(query).TryGetValue("message", out var message))
-        {
-            return message.ToString();
-        }
+        if (string.IsNullOrWhiteSpace(query))
+            return null;
+
+        // Simple query parser to replace QueryHelpers.ParseQuery
+        if (query.StartsWith("?"))
+            query = query.Substring(1);
+
+        var queryParams = query.Split('&')
+            .Select(param => param.Split('='))
+            .Where(param => param.Length == 2)
+            .ToDictionary(param => param[0], param => Uri.UnescapeDataString(param[1]));
+
+        if (queryParams.TryGetValue("message", out var message))
+            return message;
 
         return null;
     }
